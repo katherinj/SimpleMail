@@ -14,7 +14,7 @@
 ### Stretch Features
 
 - [ ] User can press a 'Load More' button to see the next 5 emails displayed
-- [ ]Each email displays additional information:
+- [ ] Each email displays additional information:
 
 * Picture of the sender
 * Email sent date
