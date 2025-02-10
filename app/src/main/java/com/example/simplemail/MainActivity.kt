@@ -1,6 +1,7 @@
 package com.example.simplemail
 
 import android.os.Bundle
+import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -9,7 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity : AppCompatActivity() {
-    lateinit var emails: List<Email>
+    lateinit var emails: MutableList<Email>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,8 +27,12 @@ class MainActivity : AppCompatActivity() {
         val emailAdapter = EmailAdapter(emails)
 
         emailsRecyclerView.adapter = emailAdapter
-
         emailsRecyclerView.layoutManager = LinearLayoutManager(this)
 
+        findViewById<Button>(R.id.loadMoreBtn).setOnClickListener {
+            val newEmails = EmailFetcher.getNext5Emails()
+            val startPosition = emails.size
+            emails.addAll(newEmails)
+            emailAdapter.notifyItemRangeInserted(startPosition, newEmails.size)        }
     }
 }
