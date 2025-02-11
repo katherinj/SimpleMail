@@ -10,6 +10,8 @@
         android:id="@+id/senderTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="88dp"
+        android:layout_marginTop="4dp"
         android:padding="5dp"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,6 +22,7 @@
         android:id="@+id/titleTv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="88dp"
         android:padding="5dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/senderTv"
@@ -27,12 +30,40 @@
 
     <TextView
         android:id="@+id/summaryTv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="5dp"
-        android:lines="1"
+        android:layout_width="303dp"
+        android:layout_height="31dp"
         android:ellipsize="end"
+        android:lines="1"
+        android:padding="5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/titleTv"
         tools:text="Have you been able to finish the latest assignment? I'm stuck on the last and don't know what's wrong." />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/profilePictureImg"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_launcher_round"
+        app:strokeWidth="0dp"
+        app:strokeColor="@android:color/black"
+        app:shapeAppearanceOverlay="@style/CircleImageView"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/dateTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="37dp"
+        android:text="June 29"
+        app:layout_constraintBottom_toTopOf="@+id/summaryTv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.958"
+        app:layout_constraintStart_toEndOf="@+id/senderTv"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.842" />
 </androidx.constraintlayout.widget.ConstraintLayout>
